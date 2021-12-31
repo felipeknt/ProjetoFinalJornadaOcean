@@ -12,7 +12,10 @@ namespace ProjetoFinalJornadaOcean.Views
     /// </summary>
     internal class ConsoleViewElevador
     {
-        Elevador elevador = new Elevador();
+        private string status = "Aguardando";
+
+        //Nova instancia da classe Elevador
+        Elevador e = new Elevador();
 
         public void UsarElevador() {
             ConfiguracaoConsole();
@@ -25,17 +28,18 @@ namespace ProjetoFinalJornadaOcean.Views
 
         private void ConfiguracaoConsole() {
             Console.ForegroundColor = ConsoleColor.Green;
+            Console.Title = "Projeto elevador";
         }
 
         private void Painel() {
             Console.WriteLine("╔══════════════════════╗");
-            Console.WriteLine("║                      ║");
-            Console.WriteLine("║                      ║");
-            Console.WriteLine("║                      ║");
-            Console.WriteLine("║                      ║");
-            Console.WriteLine("║                      ║");
-            Console.WriteLine("║                      ║");
-            Console.WriteLine("║                      ║");
+            Console.WriteLine($"║ Status: {status}   ║");
+            Console.WriteLine($"║ Andar: {e.AndarAtual.ToString("00")}            ║");
+            Console.WriteLine($"║ Pessoas: {e.Pessoas.ToString("00")}          ║");
+            //Console.WriteLine("║                      ║");
+           // Console.WriteLine("║                      ║");
+           // Console.WriteLine("║                      ║");
+            //Console.WriteLine("║                      ║");
             Console.WriteLine("╚══════════════════════╝");
 
         }
