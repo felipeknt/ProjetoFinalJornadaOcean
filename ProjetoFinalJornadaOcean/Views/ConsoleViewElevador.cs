@@ -16,9 +16,7 @@ namespace ProjetoFinalJornadaOcean.Views
 
         public void UsarElevador() {
             ConfiguracaoConsole();
-            Console.WriteLine("Projeto - ELEVADOR");
-            Console.WriteLine("BEM VINDO");
-            //Console.
+            Painel();
             Console.ReadKey();
         }
         public static void LimparConsole(){
@@ -27,6 +25,19 @@ namespace ProjetoFinalJornadaOcean.Views
 
         private void ConfiguracaoConsole() {
             Console.ForegroundColor = ConsoleColor.Green;
+        }
+
+        private void Painel() {
+            Console.WriteLine("╔══════════════════════╗");
+            Console.WriteLine("║                      ║");
+            Console.WriteLine("║                      ║");
+            Console.WriteLine("║                      ║");
+            Console.WriteLine("║                      ║");
+            Console.WriteLine("║                      ║");
+            Console.WriteLine("║                      ║");
+            Console.WriteLine("║                      ║");
+            Console.WriteLine("╚══════════════════════╝");
+
         }
     }
 }
