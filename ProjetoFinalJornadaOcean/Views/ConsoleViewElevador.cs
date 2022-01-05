@@ -17,16 +17,31 @@ namespace ProjetoFinalJornadaOcean.Views
         //Nova instancia da classe Elevador
         Elevador e = new Elevador();
 
-        public void UsarElevador()
+        public void UsarElevadorAsync()
         {
             ConfiguracaoConsole();
-            Painel();
-            Console.ReadKey();
+            Console.WriteLine("Quantos andares: ");
+            int qtdAndar = int.Parse(Console.ReadLine());
+            Console.WriteLine("Capacidade maxima de pessoas: ");
+            int qtdMaxima = int.Parse(Console.ReadLine());
+            e.Inicializar(qtdAndar, qtdMaxima);
+            string opcao = "";
+            do
+            {
+                //ConfiguracaoConsole();
+                Painel();
+                Entrada(Console.ReadLine());
+                //await Task.Delay(3000);
+                LimparConsole();
+            } while (opcao != "z" || opcao != "Z");
         }
-        public static void LimparConsole()
-        {
+
+        public static void LimparConsole() {
+            Task.Delay(3000);
             Console.Clear();
+
         }
+        
 
         private void ConfiguracaoConsole()
         {

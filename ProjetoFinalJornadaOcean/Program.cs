@@ -15,7 +15,7 @@ namespace ProjetoFinalJornadaOcean
             //Nova instancia da classe de visualização do elevador
             ConsoleViewElevador viewElevador = new ConsoleViewElevador();
             //Inicializando painel de interação da view
-            viewElevador.UsarElevador();
+            viewElevador.UsarElevadorAsync();
         }
     }
 }

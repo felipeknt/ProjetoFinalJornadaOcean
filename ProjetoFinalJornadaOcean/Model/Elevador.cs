@@ -27,7 +27,7 @@ namespace ProjetoFinalJornadaOcean.Model
             //deve acrescentar uma pessoa no elevador (só deve acrescentar se ainda houver espaço);
 
             //verifica se tem espaço no elevador
-            if (capacidade <= Pessoas) { 
+            if (Pessoas <= capacidade) { 
                 Pessoas++;
             }else{
                 Console.WriteLine("Elevador cheio.");
@@ -57,8 +57,10 @@ namespace ProjetoFinalJornadaOcean.Model
         public void Descer() {
             //Deve descer um andar (não deve descer se já estiver no térreo.)
             if (AndarAtual == 0) {
-                Console.WriteLine($"Elevador está saindo do {AndarAtual} e indo para o: {AndarAtual--}");
+                Console.WriteLine($"Elevador está no terreo");
                 //AndarAtual--; 
+            }else {
+                Console.WriteLine($"Elevador está saindo do {AndarAtual} e subindo para o: {AndarAtual--}");
             }
         }
     }
