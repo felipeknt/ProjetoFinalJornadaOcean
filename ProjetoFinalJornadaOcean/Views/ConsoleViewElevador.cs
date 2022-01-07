@@ -28,19 +28,13 @@ namespace ProjetoFinalJornadaOcean.Views
             string opcao = "";
             do
             {
-                //ConfiguracaoConsole();
                 Painel();
-                Entrada(Console.ReadLine());
-                //await Task.Delay(3000);
-                LimparConsole();
-            } while (opcao != "z" || opcao != "Z");
+                opcao = Console.ReadLine();
+                Entrada(opcao) ;
+                //Task task = LimparConsole();
+            } while (opcao != "z" );
         }
 
-        public static void LimparConsole() {
-            Task.Delay(3000);
-            Console.Clear();
-
-        }
         
 
         private void ConfiguracaoConsole()
@@ -51,8 +45,9 @@ namespace ProjetoFinalJornadaOcean.Views
 
         private void Painel()
         {
+            Console.Clear();
             Console.WriteLine("╔══════════════════════╗");
-            Console.WriteLine($"║ Status: {status}   ║");
+            //Console.WriteLine($"║ Status: {status}   ║");
             Console.WriteLine($"║ Andar: {e.AndarAtual.ToString("00")}            ║");
             Console.WriteLine($"║ Pessoas: {e.Pessoas.ToString("00")}          ║");
             //Console.WriteLine("║                      ║");
@@ -60,7 +55,13 @@ namespace ProjetoFinalJornadaOcean.Views
             // Console.WriteLine("║                      ║");
             //Console.WriteLine("║                      ║");
             Console.WriteLine("╚══════════════════════╝");
-
+            
+            Console.WriteLine($"Status do elevador: {e.Status()}");
+            Console.WriteLine(@"Escolha uma opcao:
+1 - Entrar;
+2 - Sair;
+3 - Subir;
+4 - Descer.");
         }
 
         private void Entrada(string t)

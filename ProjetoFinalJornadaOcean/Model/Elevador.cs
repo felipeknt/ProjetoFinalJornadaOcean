@@ -9,6 +9,7 @@ namespace ProjetoFinalJornadaOcean.Model
     internal class Elevador
     {
         private int andares, capacidade;
+        private string status = "Aguardando.";
         //private int qtdPessoas = 0;
 
         public int AndarAtual { get; set; }
@@ -22,22 +23,25 @@ namespace ProjetoFinalJornadaOcean.Model
 
             Console.WriteLine($"Quantidade de andares: {andares}\nCapacidade máxima de pessoas: {capacidade}");
         }
-
+        public string Status() {
+            return status;
+        }
         public void Entrar() {
             //deve acrescentar uma pessoa no elevador (só deve acrescentar se ainda houver espaço);
 
             //verifica se tem espaço no elevador
-            if (Pessoas <= capacidade) { 
+            if (Pessoas < capacidade) {
+                status = "Uma pessoa entrou no elevador.";
                 Pessoas++;
             }else{
-                Console.WriteLine("Elevador cheio.");
+                status = "Elevador cheio.";
             }
         }
 
         public void Sair() {
             //deve remover uma pessoa do elevador(só deve remover se houver alguém dentro dele);
             if (Pessoas == 0) {
-                Console.WriteLine("O elevador encontra-se vazio.");
+                status = "O elevador encontra-se vazio.";
             }else{
                 Pessoas--;
             }
@@ -46,10 +50,10 @@ namespace ProjetoFinalJornadaOcean.Model
         public void Subir() {
             //deve subir um andar ( nao deve subir se ja estiver no ultimo andar)
             if (andares == AndarAtual) {
-                Console.WriteLine("O elevador já está no ultimo andar e não pode mais subir.");
+                status = "O elevador já está no ultimo andar e não pode mais subir.";
             }else {
 
-                Console.WriteLine($"Elevador está saindo do {AndarAtual} e subindo para o: {AndarAtual++}");
+                status = $"Elevador está saindo do {AndarAtual} e subindo para o: {++AndarAtual}";
                 //andarAtual++;
             }
         }
@@ -57,10 +61,10 @@ namespace ProjetoFinalJornadaOcean.Model
         public void Descer() {
             //Deve descer um andar (não deve descer se já estiver no térreo.)
             if (AndarAtual == 0) {
-                Console.WriteLine($"Elevador está no terreo");
+                status = "Elevador está no terreo";
                 //AndarAtual--; 
             }else {
-                Console.WriteLine($"Elevador está saindo do {AndarAtual} e subindo para o: {AndarAtual--}");
+                status = $"Elevador está saindo do {AndarAtual} e subindo para o: {AndarAtual--}";
             }
         }
     }
