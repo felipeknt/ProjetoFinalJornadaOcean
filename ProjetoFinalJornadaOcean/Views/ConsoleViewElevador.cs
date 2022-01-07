@@ -12,7 +12,6 @@ namespace ProjetoFinalJornadaOcean.Views
     /// </summary>
     internal class ConsoleViewElevador
     {
-        private string status = "Aguardando";
 
         //Nova instancia da classe Elevador
         Elevador e = new Elevador();
@@ -57,7 +56,8 @@ namespace ProjetoFinalJornadaOcean.Views
             Console.WriteLine("╚══════════════════════╝");
             
             Console.WriteLine($"Status do elevador: {e.Status()}");
-            Console.WriteLine(@"Escolha uma opcao:
+            Console.WriteLine(e.Config);
+            Console.Write(@"Escolha uma opcao:
 1 - Entrar;
 2 - Sair;
 3 - Subir;
@@ -69,23 +69,23 @@ namespace ProjetoFinalJornadaOcean.Views
             switch (t)
             {
                 case "1":
-                    Console.WriteLine("Opção 1 escolhida: Entrar");
+                    //Console.WriteLine("Opção 1 escolhida: Entrar");
                     e.Entrar();
                     break;
                 case "2":
-                    Console.WriteLine("Opção 2 escolhida: Sair");
+                    //Console.WriteLine("Opção 2 escolhida: Sair");
                     e.Sair();
                     break;
                 case "3":
-                    Console.WriteLine("Opção 3 escolhida: Subir");
+                    //Console.WriteLine("Opção 3 escolhida: Subir");
                     e.Subir();
                     break;
                 case "4":
-                    Console.WriteLine("Opção 4 escolhida: Descer");
+                    //Console.WriteLine("Opção 4 escolhida: Descer");
                     e.Descer();
                     break;
                 default:
-                    Console.WriteLine("Opção inválida.");
+                    //Console.WriteLine("Opção inválida.");
                     break;
             }
         }

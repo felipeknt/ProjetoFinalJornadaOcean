@@ -10,10 +10,13 @@ namespace ProjetoFinalJornadaOcean.Model
     {
         private int andares, capacidade;
         private string status = "Aguardando.";
+        private string config;
         //private int qtdPessoas = 0;
 
         public int AndarAtual { get; set; }
         public int Pessoas { get; set; }
+
+        public string Config { get => config; set => config = value; }
         //O usuário vai informar quantos andares o elevador possui e a capacidade de pessoas.
         public void Inicializar(int qtdAndares, int qtdMaxPessoas) {
             //deve receber como parâmetros a capacidade do elevador e o total de
@@ -21,7 +24,7 @@ namespace ProjetoFinalJornadaOcean.Model
             andares = qtdAndares;
             capacidade = qtdMaxPessoas;
 
-            Console.WriteLine($"Quantidade de andares: {andares}\nCapacidade máxima de pessoas: {capacidade}");
+            config = $"Quantidade de andares: {andares}\nCapacidade máxima de pessoas: {capacidade}";
         }
         public string Status() {
             return status;
